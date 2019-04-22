@@ -1,0 +1,23 @@
+/// COLORS
+$color-purple: #2F1A80;
+$color-eggplant: #51224A;
+$color-yellow: #FFCF27;
+$color-coral: #F4675E;
+
+$color-melon-alt: #F8D4CF;
+$color-melon: #FBE6E4;
+$color-beige: #FCF9F2;
+
+$color-gray: #5F5F5F;
+$color-gray-light: #F7F7F7;
+$color-white: #FFFFFF;
+
+/// DISCOURSE HEADER
+.d-header {
+  box-shadow: none;
+  border-bottom: 3px solid $color-yellow;
+}
+
+.d-header-icons .d-icon {
+  color: $color-coral;
+}

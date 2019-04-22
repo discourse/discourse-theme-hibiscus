@@ -5,5 +5,17 @@
   "assets": {
   },
   "color_schemes": {
+    "Default": {
+      "primary": "333333",
+      "secondary": "FCF9F2",
+      "tertiary": "F4675E",
+      "quaternary": "F8D4CF",
+      "header_background": "2F1A80",
+      "header_primary": "F4675E",
+      "highlight": "9E9E9E",
+      "danger": "96000e",
+      "success": "1ca551",
+      "love": "f50057"
+    }
   }
 }
