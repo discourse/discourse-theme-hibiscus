@@ -4,13 +4,33 @@ $color-eggplant: #51224A;
 $color-yellow: #FFCF27;
 $color-coral: #F4675E;
 
-$color-melon-alt: #F8D4CF;
-$color-melon: #FBE6E4;
+$color-melon-dark: #F8D4CF;
+$color-melon: #F8F3F1;
+$color-melon-light: #FBE6E4;
 $color-beige: #FCF9F2;
 
 $color-gray: #5F5F5F;
-$color-gray-light: #F7F7F7;
+$color-gray-light: #e4e4e4;
 $color-white: #FFFFFF;
+
+$layout-gutter: 1rem;
+
+/// TYPOGRAPHY
+ @import url('https://fonts.googleapis.com/css?family=Archivo:400,700|Merriweather');
+
+ $font-merriweather: 'Merriweather', Georgia, serif;
+ $font-archivo: 'Archivo', sans-serif;
+
+ $font-serif: $font-merriweather;
+ $font-sans-serif: $font-archivo;
+
+body {
+  font-family: $font-sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+  background-color: $color-melon;
+}
 
 /// DISCOURSE HEADER
 .d-header {
@@ -20,4 +40,115 @@ $color-white: #FFFFFF;
 
 .d-header-icons .d-icon {
   color: $color-coral;
+  font-size: 16px;
+}
+
+//
+// Index - Topics
+.topic-list {
+  th {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: $color-eggplant;
+    font-weight: bold;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  tbody {
+    border-top: 2px solid $color-melon-dark;
+  }
+}
+
+.topic-list-item {
+  border-bottom: 1px solid $color-gray-light;
+  background-color: $color-white;
+  font-family: $font-serif;
+
+  &:hover {
+    background-color: $color-beige;
+  }
+}
+
+
+.topic-list-main-link a.title,
+.topic-list .main-link a.title,
+.latest-topic-list-item .main-link a.title {
+  font-size: 15px;
+  padding: 0;
+  margin-bottom: $layout-gutter / 2;
+  display: inline-block;
+}
+
+//
+// Visited links
+.topic-list-item.visited a.title:not(.badge-notification),
+.latest-topic-list-item.visited a.title:not(.badge-notification),
+.category-topic-link.visited a.title:not(.badge-notification) {
+  color: $color-gray;
+}
+
+//
+// Single page
+.fancy-title {
+  font-family: $font-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.topic-body {
+//  border-bottom: 1px solid $color-gray-light;
+  background-color: $color-white;
+  float: none;
+
+  .contents p {
+    font-family: $font-serif;
+
+  }
+}
+
+.topic-avatar {
+  background-color: $color-white;
+  float: none;
+  padding-left: $layout-gutter;
+}
+
+.topic-post article .row {
+  display: flex;
+}
+
+
+//
+// Navigation Bar
+.nav-pills > li {
+  & > a {
+    color: $color-gray;
+
+    &:hover {
+      color: black;
+      background-color: white;
+    }
+  }
+
+  a.active {
+    background-color: transparent;
+    color: $color-eggplant;
+    font-weight: 700;
+    border-bottom: 2px solid $color-coral;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:hover {
+      border-bottom: 2px solid $color-yellow;
+      color: black;
+    }
+  }
+}
+
+
+//
+// Styleguide
+.styleguide-contents {
+  background: $color-white;
+  padding: 1rem;
 }
