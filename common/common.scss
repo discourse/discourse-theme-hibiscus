@@ -1,75 +1,211 @@
-/// COLORS
+//
+// --------------------------------------------------
+// DIRECTORY
+/// 1. Variables
+/// 2. Global
+/// 3. Header
+/// 4. Content
+// --------------------------------------------------
+//
+
+
+///
+/// VARIABLES – COLORS
+// --------------------------------------------------
 $color-purple: #2F1A80;
 $color-eggplant: #51224A;
 $color-yellow: #FFCF27;
 $color-coral: #F4675E;
 
 $color-melon-dark: #F8D4CF;
-$color-melon: #F8F3F1;
-$color-melon-light: #FBE6E4;
+$color-melon: #FBE6E4;
+$color-melon-light: #F8F3F1;
 $color-beige: #FCF9F2;
 
 $color-gray: #5F5F5F;
 $color-gray-light: #e4e4e4;
+$color-gray-lighter: #f6f6f6;
 $color-white: #FFFFFF;
 
+///
+/// VARIABLES - LAYOUT
+// --------------------------------------------------
 $layout-gutter: 1rem;
+$topic-avatar-width: 30px;
+$topic-box-shadow: 0px 1px 6px rgba(0,0,0,0.1);
 
-/// TYPOGRAPHY
- @import url('https://fonts.googleapis.com/css?family=Archivo:400,700|Merriweather');
 
- $font-merriweather: 'Merriweather', Georgia, serif;
- $font-archivo: 'Archivo', sans-serif;
 
- $font-serif: $font-merriweather;
- $font-sans-serif: $font-archivo;
+///
+/// VARIABLES – TYPOGRAPHY
+// --------------------------------------------------
+$font-merriweather: 'Merriweather', Georgia, serif;
+$font-archivo: 'Archivo', sans-serif;
 
+$font-serif: $font-merriweather;
+$font-sans-serif: $font-archivo;
+
+$base-font-family: $font-sans-serif;
+
+///
+/// GLOBAL
+// --------------------------------------------------
 body {
-  font-family: $font-sans-serif;
+  font-family: $base-font-family;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 14px;
-  background-color: $color-melon;
+  font-size: $base-font-size-smaller;
+  background-color: #FCF9F2;
 }
 
-/// DISCOURSE HEADER
+blockquote {
+  border-left: 5px solid $color-melon-dark;
+  background-color: #f6f6f6;
+}
+
+input {
+  &[type="text"],
+  &[type="password"],
+  &[type="datetime"],
+  &[type="datetime-local"],
+  &[type="date"],
+  &[type="month"],
+  &[type="time"],
+  &[type="week"],
+  &[type="number"],
+  &[type="email"],
+  &[type="url"],
+  &[type="search"],
+  &[type="tel"],
+  &[type="color"] {
+    background-color: $primary-very-low;
+    border: 1px solid $primary-low-mid;
+    border-radius: 3px;
+
+    &:focus {
+      border-color: $primary-medium;
+      box-shadow: 0 0 8px 0 $primary-low-mid;
+      background-color: white;
+    }
+  }
+}
+
+textarea {
+  border-radius: 3px;
+}
+
+///
+/// HEADER
+// --------------------------------------------------
 .d-header {
   box-shadow: none;
+  height: 5em;
   border-bottom: 3px solid $color-yellow;
 }
 
-.d-header-icons .d-icon {
-  color: $color-coral;
-  font-size: 16px;
+.d-header-icons {
+  .header-dropdown-toggle {
+    margin-left: 1rem;
+  }
+
+  .d-icon {
+    color: $quaternary;
+    font-size: $base-font-size;
+  }
+
+  .icon {
+    border-radius: 50%;
+    border: none;
+  }
+
+  .drop-down-mode & {
+    .active .icon {
+      position: relative;
+      border-color: $color-yellow;
+      background-color: $color-yellow;
+      cursor: default;
+      border: none;
+
+      .d-icon {
+        color: $primary;
+      }
+
+      &:after {
+        border: none;
+      }
+    }
+  }
 }
 
-//
-// Index - Topics
+.user-menu .notifications .read {
+  background-color: $quaternary-low;
+}
+
+
+///
+/// HEADER - EXTRA INFO
+// --------------------------------------------------
+.extra-info-wrapper {
+  .topic-link {
+    color: $color-melon-dark;
+    font-family: $font-serif;
+    font-size: $base-font-size;
+    margin: 4px 0;
+
+    &:hover {
+      color: $quaternary;
+    }
+  }
+
+  .discourse-tag {
+    color: $quaternary-low !important;
+
+    &:hover {
+      color: $quaternary !important;
+    }
+  }
+
+  .badge-wrapper.bullet span.badge-category,
+  .badge-wrapper.bar span.badge-category,
+  .badge-wrapper.none span.badge-category {
+    color: white;
+  }
+}
+
+///
+/// TOPIC LIST
+// --------------------------------------------------
+#list-area {
+}
+
 .topic-list {
   th {
     text-transform: uppercase;
     font-size: 12px;
     color: $color-eggplant;
     font-weight: bold;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding: $topic-body-width-padding 0 $topic-body-width-padding/2 0 !important;
   }
 
-  tbody {
-    border-top: 2px solid $color-melon-dark;
+  > tbody {
+    border-top: 3px solid $quaternary-low;
+    box-shadow: $topic-box-shadow;
   }
 }
 
 .topic-list-item {
-  border-bottom: 1px solid $color-gray-light;
+  border-bottom: 1px solid $primary-low;
   background-color: $color-white;
   font-family: $font-serif;
 
   &:hover {
-    background-color: $color-beige;
+    background-color: $primary-very-low;
+
+    td {
+      color: $primary-high;
+    }
   }
 }
-
 
 .topic-list-main-link a.title,
 .topic-list .main-link a.title,
@@ -80,46 +216,111 @@ body {
   display: inline-block;
 }
 
-//
-// Visited links
-.topic-list-item.visited a.title:not(.badge-notification),
-.latest-topic-list-item.visited a.title:not(.badge-notification),
-.category-topic-link.visited a.title:not(.badge-notification) {
-  color: $color-gray;
+.topic-list-item.visited,
+.latest-topic-list-item.visited,
+.category-topic-link.visited {
+  a.title:not(.badge-notification) {
+    color: $color-gray;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.badge-category-bg {
+  border-radius: 9px;
+}
+
+.badge-wrapper.bullet span.badge-category {
+  &:hover {
+    color: black;
+  }
+
+  .extra-info-wrapper & {
+    color: white;
+
+    &:hover {
+      color: $color-coral;
+    }
+  }
 }
 
 //
-// Single page
+// TOPIC PAGE
+// --------------------------------------------------
 .fancy-title {
   font-family: $font-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: $base-font-size-larger;
+}
+
+.topic-post {
+  .row {
+    width: $topic-body-width + ($topic-body-width-padding * 2);
+    box-shadow: $topic-box-shadow;
+    margin-bottom: 2rem;
+  }
 }
 
 .topic-body {
-//  border-bottom: 1px solid $color-gray-light;
   background-color: $color-white;
   float: none;
 
-  .contents p {
+  .contents {
     font-family: $font-serif;
 
+    .cooked {
+      line-height: 1.5;
+    }
+
+    ul li {
+      margin-bottom: 4px;
+    }
+  }
+
+  .regular {
+    margin-top: 0;
   }
 }
 
 .topic-avatar {
   background-color: $color-white;
   float: none;
-  padding-left: $layout-gutter;
+  border-top: 3px solid $color-melon-dark;
+  width: $topic-body-width;
+  padding: $topic-body-width-padding;
+
+  .avatar {
+    height: $topic-avatar-width;
+    width: $topic-avatar-width;
+  }
 }
 
-.topic-post article .row {
-  display: flex;
+.topic-meta-data {
+  position: absolute;
+  top: -37px;
+  width: calc(#{$topic-body-width} - (#{$topic-avatar-width} + #{$topic-body-width-padding}));
+  z-index: 11;
+  padding: 0 !important;
+  right:  $topic-body-width-padding;
 }
 
+.topic-map {
+  margin: 0;
+  border: 0;
+}
+
+// DROPDOWNS
+// --------------------------------------------------
+.menu-panel {
+  background-color: white;
+  margin-top: 16px;
+}
 
 //
 // Navigation Bar
+// --------------------------------------------------
 .nav-pills > li {
   & > a {
     color: $color-gray;
@@ -145,9 +346,19 @@ body {
   }
 }
 
+.suggested-topics {
+  th {
+    color: $color-gray;
+  }
+}
+
+#share-link {
+  background: white;
+}
 
 //
 // Styleguide
+// --------------------------------------------------
 .styleguide-contents {
   background: $color-white;
   padding: 1rem;
