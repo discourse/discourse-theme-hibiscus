@@ -349,6 +349,19 @@ textarea {
 .suggested-topics {
   th {
     color: $color-gray;
+//
+// Signup CTA
+// --------------------------------------------------
+.alert.alert-info {
+  background-color: $color-melon;
+  box-shadow: 3px 3px 0 $color-coral;
+
+  .buttons a {
+    margin-top: 0.5rem;
+  }
+
+  .btn {
+    margin-right: 1rem;
   }
 }
 
