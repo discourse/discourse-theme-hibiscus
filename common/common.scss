@@ -486,7 +486,11 @@ input[type="color"],
 }
 
 // DROPDOWNS
+// MODALS
 // --------------------------------------------------
+.modal-inner-container {
+  background-color: $color-white;
+}
 .menu-panel {
   background-color: white;
   margin-top: 16px;
