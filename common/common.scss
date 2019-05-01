@@ -218,13 +218,18 @@ input[type="color"],
   }
 
   .d-icon {
-    color: $quaternary;
+    color: $tertiary;
     font-size: $base-font-size;
   }
 
   .icon {
     border-radius: 50%;
     border: none;
+
+    &:focus,
+    &:hover {
+      border: none;
+    }
   }
 
   .drop-down-mode & {
@@ -246,10 +251,27 @@ input[type="color"],
   }
 }
 
-.user-menu .notifications .read {
-  background-color: $quaternary-low;
+.title > a:after {
+  content: "Discourse";
+  display: block;
+  font-family: $font-archivo;
+  padding: 0 1rem;
+  font-size: 18px;
+  color: $color-coral;
+  font-weight: 700;
+  text-shadow: 2px 2px 0 black;
+  transition: 0.15s ease-out all;
+  text-transform: uppercase;
 }
 
+.title > a:hover:after {
+  color: $color-yellow;
+  text-shadow: 2px 2px 0 $color-eggplant;
+}
+
+#site-logo {
+  display: none;
+}
 
 ///
 /// HEADER - EXTRA INFO
@@ -268,10 +290,15 @@ input[type="color"],
 
   .discourse-tag {
     color: $quaternary-low !important;
+    font-family: $font-serif;
 
     &:hover {
       color: $quaternary !important;
     }
+  }
+
+  .badge-wrapper {
+    margin-right: 12px;
   }
 
   .badge-wrapper.bullet span.badge-category,
