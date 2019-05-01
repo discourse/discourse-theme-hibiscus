@@ -17,8 +17,8 @@
 //
 
 
-///
-/// VARIABLES – COLORS
+//
+// VARIABLES – COLORS
 // --------------------------------------------------
 $color-purple: #2F1A80;
 $color-eggplant: #51224A;
@@ -33,13 +33,14 @@ $color-melon-light: #F8F3F1;
 
 $color-beige: #FCF9F2;
 
+$color-black: #000000;
 $color-gray: #5F5F5F;
 $color-gray-light: #e4e4e4;
 $color-gray-lighter: #f6f6f6;
 $color-white: #FFFFFF;
 
-///
-/// VARIABLES - LAYOUT
+//
+// VARIABLES - LAYOUT
 // --------------------------------------------------
 $layout-gutter: 1rem;
 $layout-border-radius: 3px;
@@ -47,8 +48,8 @@ $layout-border-radius: 3px;
 $topic-avatar-width: 30px;
 $topic-box-shadow: 0px 1px 6px rgba(0,0,0,0.1);
 
-///
-/// VARIABLES – TYPOGRAPHY
+//
+// VARIABLES – TYPOGRAPHY
 // --------------------------------------------------
 $font-merriweather: 'Merriweather', Georgia, serif;
 $font-archivo: 'Archivo', sans-serif;
@@ -58,8 +59,8 @@ $font-sans-serif: $font-archivo;
 
 $base-font-family: $font-sans-serif;
 
-///
-/// GLOBAL
+//
+// GLOBAL
 // --------------------------------------------------
 body {
   font-family: $base-font-family;
@@ -71,7 +72,11 @@ body {
 
 blockquote {
   border-left: 5px solid $color-melon-dark;
-  background-color: #f6f6f6;
+  background-color: $color-gray-lighter;
+
+  blockquote {
+    background-color: $color-white;
+  }
 }
 
 p {
@@ -106,9 +111,9 @@ a {
   }
 }
 
+//
 // Forms
 // --------------------------------------------------
-
 textarea,
 input[type="text"],
 input[type="password"],
@@ -177,12 +182,11 @@ div.ac-wrap,
   }
 }
 
-
+//
 // Buttons
 // --------------------------------------------------
-
 .btn {
-  border-radius: 3px;
+  border-radius: $layout-border-radius;
 
   .d-icon {
     opacity: 0.80;
@@ -191,12 +195,12 @@ div.ac-wrap,
   .discourse-no-touch & {
     &:hover,
     &.btn-hover {
-      color: black;
+      color: $color-black;
       background-color: $primary-low-mid;
       box-shadow: $topic-box-shadow;
 
       .d-icon {
-        color: black;
+        color: $color-black;
       }
     }
   }
@@ -219,14 +223,35 @@ div.ac-wrap,
   background-color: $color-white;
 }
 
-
-///
-/// HEADER
+//
+// HEADER
 // --------------------------------------------------
 .d-header {
   box-shadow: none;
   height: 5em;
   border-bottom: 3px solid $color-yellow;
+
+  #site-logo {
+    display: none;
+  }
+
+  .title > a:after {
+    content: "Discourse";
+    display: block;
+    font-family: $font-archivo;
+    padding-right: 1rem;
+    font-size: 18px;
+    color: $color-coral;
+    font-weight: 700;
+    text-shadow: 2px 2px 0 black;
+    transition: 0.15s ease-out all;
+    text-transform: uppercase;
+  }
+
+  .title > a:hover:after {
+    color: $color-yellow;
+    text-shadow: 2px 2px 0 $color-black;
+  }
 }
 
 .d-header-icons {
@@ -268,28 +293,6 @@ div.ac-wrap,
   }
 }
 
-.title > a:after {
-  content: "Discourse";
-  display: block;
-  font-family: $font-archivo;
-  padding: 0 1rem;
-  font-size: 18px;
-  color: $color-coral;
-  font-weight: 700;
-  text-shadow: 2px 2px 0 black;
-  transition: 0.15s ease-out all;
-  text-transform: uppercase;
-}
-
-.title > a:hover:after {
-  color: $color-yellow;
-  text-shadow: 2px 2px 0 $color-eggplant;
-}
-
-#site-logo {
-  display: none;
-}
-
 ///
 /// HEADER - EXTRA INFO
 // --------------------------------------------------
@@ -328,11 +331,17 @@ div.ac-wrap,
 ///
 /// TOPIC LIST
 // --------------------------------------------------
-
-.list-controls {
-  margin: 1.5rem 0;
+ol.category-breadcrumb {
+  margin-right: 1.5rem;
 }
 
+.list-controls {
+  margin: 1.55rem 0;
+}
+
+.directory table,
+.groups-table,
+.group-members,
 .category-list,
 .topic-list {
   th {
@@ -346,7 +355,7 @@ div.ac-wrap,
     padding-left: 0;
   }
 
-   .sortable:hover {
+  .sortable:hover {
     background-color: $color-white;
   }
 
@@ -370,9 +379,8 @@ div.ac-wrap,
   font-family: $font-serif;
 
   &:hover {
-    background-color: $primary-very-low;
-
     td {
+      background-color: $color-gray-lighter;
       color: $primary-high;
     }
   }
@@ -500,17 +508,38 @@ div.ac-wrap,
 }
 
 .topic-status-info {
-    border: 0;
-    padding: 0;
+  border: 0;
+  padding: 0;
 }
 
+.badge-notification.new-posts,
+.badge-notification.unread-posts {
+  color: $color-eggplant;
+}
 
+.topic-meta-data .post-infos {
+  flex-direction: row-reverse;
+}
+
+.read-state {
+  position: relative;
+  padding-right: 10px;
+}
+
+aside.quote .title {
+  border-left: 5px solid darken($color-melon-dark, 5%);
+  background-color: darken($color-gray-lighter, 3%);
+  padding: 12px;
+}
+
+//
 // MODALS
 // --------------------------------------------------
 .modal-inner-container {
   background-color: $color-white;
 }
 
+//
 // DROPDOWNS & POPUPS
 // --------------------------------------------------
 #user-card,
@@ -523,10 +552,6 @@ div.ac-wrap,
 }
 
 #share-link {
-  background-color: $color-white;
-}
-
-.menu-panel {
   background-color: $color-white;
 }
 
@@ -601,11 +626,14 @@ div.ac-wrap,
   }
 }
 
-// Search/menu
 .menu-panel {
+  background-color: $color-white;
+
   li a,
   li.heading a {
     padding: 0.5rem;
+    font-family: $font-sans-serif;
+    color: $color-eggplant;
 
     &:hover,
     &:focus {
@@ -623,9 +651,29 @@ div.ac-wrap,
   }
 }
 
-.search-result-topic .topic {
-  margin-bottom: 0.5rem;
+.user-stream {
+  border: 2px solid $color-melon;
 }
+
+.user-stream .item,
+.user-stream .user-stream-item {
+  background-color: $color-white;
+  padding: 1rem;
+  border-bottom: 1px solid $color-melon;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  blockquote {
+    background-color: $color-white;
+  }
+}
+
+.user-stream .avatar-link {
+  margin-right: 1rem;
+}
+
 
 //
 // Navigation
@@ -658,10 +706,10 @@ div.ac-wrap,
   }
 }
 
+.user-secondary-navigation .nav-stacked,
 .nav-stacked {
   background-color: $color-white;
 }
-
 
 //
 // User pages
@@ -674,15 +722,19 @@ table.group-members tr td {
   padding: 0.5rem;
 }
 
-.user-main .about .details,
-.user-main .about.collapsed-info .details {
-  background-color: $color-white;
-  margin-top: 1rem;
-  border-radius: $layout-border-radius;
+.user-main .about {
+  margin-bottom: 0;
 
-  .primary {
-    padding: 1rem;
-    box-sizing: border-box;
+  .details,
+  &.collapsed-info .details {
+    background-color: $color-white;
+    margin-top: 1rem;
+    border-radius: $layout-border-radius;
+
+    .primary {
+      padding: 1rem;
+      box-sizing: border-box;
+    }
   }
 }
 
@@ -692,7 +744,6 @@ table.group-members tr td {
   box-sizing: border-box;
   border-radius: $layout-border-radius;
 }
-
 
 //
 // Badges
@@ -704,6 +755,17 @@ table.group-members tr td {
 .badge-card .badge-contents {
   background-color: $color-white;
   border-radius: $layout-border-radius;
+}
+
+//
+// Cakeday
+// --------------------------------------------------
+.cakeday-months {
+  .select-kit.combo-box {
+    position: relative;
+    top: -3px;
+    left: 10px;
+  }
 }
 
 //
@@ -733,11 +795,11 @@ table.group-members tr td {
 }
 
 //
-// Signup CTA
+// Alerts
 // --------------------------------------------------
 .alert.alert-info {
-  background-color: $color-melon;
-  box-shadow: 3px 3px 0 $color-coral;
+  background-color: $color-yellow-light;
+  box-shadow: 3px 3px 0 $color-gray-light;
 
   .buttons a {
     margin-top: 0.5rem;
@@ -748,6 +810,13 @@ table.group-members tr td {
   }
 }
 
+//
+// Signup CTA
+// --------------------------------------------------
+.alert.signup-cta {
+  background-color: $color-melon;
+  box-shadow: 3px 3px 0 $color-coral;
+}
 
 //
 // Footer
@@ -759,6 +828,14 @@ table.group-members tr td {
     &:hover {
       color: $color-eggplant;
     }
+  }
+
+  p {
+    color: $color-gray;
+  }
+
+  ul li {
+    font-family: $font-serif;
   }
 
   .btn.btn-default {
@@ -779,7 +856,28 @@ table.group-members tr td {
   }
 }
 
+//
+// Search
+// --------------------------------------------------
+.search-container {
+  background-color: $color-white;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 3px 3px 0 $color-melon-dark;
+}
 
+.search-result-topic .topic {
+  margin-bottom: 0.5rem;
+}
+
+//
+// 404
+// --------------------------------------------------
+.page-not-found-topics {
+  background-color: $color-white;
+  padding: 1rem;
+  box-shadow: 3px 3px 0 $color-melon-dark;
+}
 
 //
 // Styleguide
