@@ -42,9 +42,10 @@ $color-white: #FFFFFF;
 /// VARIABLES - LAYOUT
 // --------------------------------------------------
 $layout-gutter: 1rem;
+$layout-border-radius: 3px;
+
 $topic-avatar-width: 30px;
 $topic-box-shadow: 0px 1px 6px rgba(0,0,0,0.1);
-$layout-border-radius: 3px;
 
 ///
 /// VARIABLES – TYPOGRAPHY
@@ -125,14 +126,14 @@ input[type="tel"],
 input[type="color"],
 .select-kit.combo-box .select-kit-header,
 .select-kit.combo-box .combo-box-header  {
-  background-color: $primary-very-low;
-  border: 1px solid $primary-low-mid;
+  background-color: $color-white;
+  border: 1px solid $color-gray-light;
   border-radius: $layout-border-radius;
   font-family: $font-sans-serif;
 
   &:focus {
-    border-color: $primary-medium;
-    box-shadow: 0 0 8px 0 $primary-low-mid;
+    border: 1px solid lighten($color-gray, 20%);
+    box-shadow: 0 0 8px 0 $color-gray-light;
     background-color: white;
   }
 }
@@ -143,23 +144,28 @@ input[type="color"],
   border-radius: $layout-border-radius;
 }
 
+.select-kit.multi-select .select-kit-header,
+.select-kit.combo-box .select-kit-header,
+.select-kit.combo-box .combo-box-header,
+.d-editor-textarea-wrapper,
 .select-kit-wrapper,
 .select-kit.multi-select {
   border-radius: $layout-border-radius;
 }
 
+div.ac-wrap,
+.d-editor-textarea-wrapper,
+.select-kit.dropdown-select-box.composer-actions .select-kit-header,
 .select-kit.multi-select .select-kit-header,
 .select-kit.combo-box .select-kit-header,
 .select-kit.combo-box .combo-box-header {
   background-color: $color-white;
-  color: $primary;
   border: 1px solid $color-gray-light;
-  border-radius: $layout-border-radius;
 
   &:focus,
   &:hover {
-    box-shadow: 0 0 8px 0 $primary-low-mid;
-    border: 1px solid $color-gray;
+    box-shadow: 0 0 8px 0 $color-gray-light;
+    border: 1px solid lighten($color-gray, 20%);
   }
 }
 
