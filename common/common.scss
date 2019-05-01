@@ -161,7 +161,46 @@ input[type="color"],
   }
 }
 
+
+// Buttons
+// --------------------------------------------------
+
+.btn {
   border-radius: 3px;
+
+  .d-icon {
+    opacity: 0.80;
+  }
+
+  .discourse-no-touch & {
+    &:hover,
+    &.btn-hover {
+      color: black;
+      background-color: $primary-low-mid;
+      box-shadow: $topic-box-shadow;
+
+      .d-icon {
+        color: black;
+      }
+    }
+  }
+}
+
+.btn-primary {
+  color: $color-white;
+  background-color: $tertiary;
+}
+
+.btn-danger {
+  color: $color-white;
+
+  &[href] {
+    color: $color-white;
+  }
+}
+
+.btn-text {
+  background-color: $color-white;
 }
 
 ///
