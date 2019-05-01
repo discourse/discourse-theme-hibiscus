@@ -311,21 +311,39 @@ input[type="color"],
 ///
 /// TOPIC LIST
 // --------------------------------------------------
-#list-area {
+
+.list-controls {
+  margin: 1.5rem 0;
 }
 
+.category-list,
 .topic-list {
   th {
     text-transform: uppercase;
     font-size: 12px;
     color: $color-eggplant;
     font-weight: bold;
-    padding: $topic-body-width-padding 0 $topic-body-width-padding/2 0 !important;
+  }
+
+  th.default {
+    padding-left: 0;
+  }
+
+   .sortable:hover {
+    background-color: $color-white;
   }
 
   > tbody {
-    border-top: 3px solid $quaternary-low;
+    border-top: 3px solid $tertiary-medium;
     box-shadow: $topic-box-shadow;
+  }
+
+  td {
+    background-color: $color-white;
+  }
+
+  .topics {
+    text-align: center;
   }
 }
 
@@ -368,7 +386,9 @@ input[type="color"],
   border-radius: 9px;
 }
 
-.badge-wrapper.bullet span.badge-category {
+.badge-wrapper span.badge-category {
+  font-family: $font-sans-serif;
+
   &:hover {
     color: black;
   }
@@ -378,6 +398,24 @@ input[type="color"],
 
     &:hover {
       color: $color-coral;
+    }
+  }
+}
+
+#create-topic {
+  background-color: $color-coral;
+  color: $color-white;
+
+  .fa {
+    color: $color-white;
+  }
+
+  &:hover {
+    background-color: $color-purple;
+    color: $color-white;
+
+    .fa {
+      color: $color-white;
     }
   }
 }
