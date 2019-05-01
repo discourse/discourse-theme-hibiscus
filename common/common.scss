@@ -354,6 +354,35 @@ textarea {
 
 #share-link {
   background: white;
+
+//
+// Footer
+// --------------------------------------------------
+.footer-message  {
+  a {
+    color: $color-coral;
+
+    &:hover {
+      color: $color-eggplant;
+    }
+  }
+
+  .btn.btn-default {
+    font-size: $base-font-size-smaller;
+    background-color: $color-white;
+    font-weight: 700;
+  }
+}
+
+.suggested-topics th {
+  color: $color-gray;
+}
+
+#topic-footer-buttons .topic-notifications-button {
+  .reason {
+    display: inline-block;
+    margin-left: 10px;
+  }
 }
 
 //
