@@ -664,6 +664,75 @@ div.ac-wrap,
 
 
 //
+// User pages
+// --------------------------------------------------
+.user-content {
+  background-color: transparent;
+}
+
+table.group-members tr td {
+  padding: 0.5rem;
+}
+
+.user-main .about .details,
+.user-main .about.collapsed-info .details {
+  background-color: $color-white;
+  margin-top: 1rem;
+  border-radius: $layout-border-radius;
+
+  .primary {
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+}
+
+.user-content-wrapper {
+  background-color: $color-white;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: $layout-border-radius;
+}
+
+
+//
+// Badges
+// --------------------------------------------------
+.badge-groups {
+  color: $color-gray;
+}
+
+.badge-card .badge-contents {
+  background-color: $color-white;
+  border-radius: $layout-border-radius;
+}
+
+//
+// Reply area
+// --------------------------------------------------
+.reply-area,
+.d-editor-textarea-wrapper textarea {
+  background-color: $color-white;
+}
+
+.d-editor-button-bar .btn,
+.d-editor-button-bar .btn-default {
+  border-radius: 0;
+}
+
+.open .grippie {
+  background-color: $color-yellow;
+}
+
+.composer-popup {
+  background-color: $color-melon-light;
+  box-shadow: none;
+  top: 11px;
+  bottom: 0;
+  right: 0;
+  left: auto;
+}
+
+//
 // Signup CTA
 // --------------------------------------------------
 .alert.alert-info {
