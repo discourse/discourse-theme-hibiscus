@@ -63,34 +63,104 @@ blockquote {
   background-color: #f6f6f6;
 }
 
-input {
-  &[type="text"],
-  &[type="password"],
-  &[type="datetime"],
-  &[type="datetime-local"],
-  &[type="date"],
-  &[type="month"],
-  &[type="time"],
-  &[type="week"],
-  &[type="number"],
-  &[type="email"],
-  &[type="url"],
-  &[type="search"],
-  &[type="tel"],
-  &[type="color"] {
-    background-color: $primary-very-low;
-    border: 1px solid $primary-low-mid;
-    border-radius: 3px;
+p {
+  font-family: $font-serif;
+  line-height: 1.5;
+}
 
-    &:focus {
-      border-color: $primary-medium;
-      box-shadow: 0 0 8px 0 $primary-low-mid;
-      background-color: white;
+a {
+  transition: all ease-out 0.15s;
+}
+
+.contents {
+  h2,
+  h3 {
+    color: $color-eggplant;
+
+    .d-icon {
+      opacity: 0.75;
+      margin-right: 8px;
     }
+  }
+
+  .cooked {
+    line-height: 1.5;
+    font-family: $font-serif;
+  }
+
+  ol li,
+  ul li {
+    margin-bottom: 4px;
+    font-family: $font-serif;
   }
 }
 
-textarea {
+// Forms
+// --------------------------------------------------
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.select-kit.combo-box .select-kit-header,
+.select-kit.combo-box .combo-box-header  {
+  background-color: $primary-very-low;
+  border: 1px solid $primary-low-mid;
+  border-radius: $layout-border-radius;
+  font-family: $font-sans-serif;
+
+  &:focus {
+    border-color: $primary-medium;
+    box-shadow: 0 0 8px 0 $primary-low-mid;
+    background-color: white;
+  }
+}
+
+.select-kit.multi-select.is-expanded .select-kit-wrapper,
+.select-kit.combo-box .select-kit-header.is-focused {
+  box-shadow: 0 0 8px 0 $primary-high;
+  border-radius: $layout-border-radius;
+}
+
+.select-kit-wrapper,
+.select-kit.multi-select {
+  border-radius: $layout-border-radius;
+}
+
+.select-kit.multi-select .select-kit-header,
+.select-kit.combo-box .select-kit-header,
+.select-kit.combo-box .combo-box-header {
+  background-color: $color-white;
+  color: $primary;
+  border: 1px solid $color-gray-light;
+  border-radius: $layout-border-radius;
+
+  &:focus,
+  &:hover {
+    box-shadow: 0 0 8px 0 $primary-low-mid;
+    border: 1px solid $color-gray;
+  }
+}
+
+.select-kit.multi-select .choices .selected-name .body:hover {
+  background-color: $color-gray-light;
+
+  .fa {
+    color: $color-gray;
+  }
+}
+
   border-radius: 3px;
 }
 
