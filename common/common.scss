@@ -491,9 +491,100 @@ input[type="color"],
 .modal-inner-container {
   background-color: $color-white;
 }
+
+// DROPDOWNS & POPUPS
+// --------------------------------------------------
+#user-card,
+#group-card {
+  background: $primary-very-low center center;
+
+  .card-content {
+    background: rgba($primary-very-low, 0.85);
+  }
+}
+
+#share-link {
+  background-color: $color-white;
+}
+
 .menu-panel {
-  background-color: white;
-  margin-top: 16px;
+  background-color: $color-white;
+}
+
+.user-menu .notifications {
+  li {
+    background-color: $color-yellow-light;
+
+    &:hover,
+    &:hover a {
+      background-color: darken($color-yellow-light, 10%);
+    }
+  }
+
+  li.read {
+    background-color: $tertiary-low;
+  }
+
+  li.read:hover,
+  li.read:hover a,
+  li.read a:hover {
+    background-color: darken($tertiary-low, 10%);
+  }
+}
+
+.select-kit {
+  .select-kit-collection,
+  .select-kit-body {
+    background-color: $color-white;
+  }
+
+  .select-kit-row.is-selected,
+  .select-kit-row.is-selected:hover,
+  .select-kit-row.is-selected.is-highlighted,
+  .select-kit-row.is-selected.is-highlighted:hover,
+  .select-kit-row.is-highlighted,
+  .select-kit-row.is-highlighted:hover {
+    background-color: $color-melon;
+  }
+
+  &.dropdown-select-box.period-chooser .period-chooser-header {
+    h2.selected-name {
+      &:hover {
+        color: $color-purple;
+
+        .date-section {
+          color: $color-purple;
+        }
+
+        .top-date-string {
+          color: $primary;
+        }
+      }
+
+      .top-date-string {
+        font-size: $base-font-size-smaller;
+        margin-left: 0.5rem;
+        font-weight: bold;
+      }
+    }
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &.dropdown-select-box.period-chooser .period-chooser-row {
+    font-family: $font-sans-serif;
+
+    .top-date-string {
+      font-weight: bold;
+    }
+  }
+}
+
+// Search/menu
+.menu-panel {
+  li a,
 }
 
 //
