@@ -336,7 +336,7 @@ ol.category-breadcrumb {
 }
 
 .list-controls {
-  margin: 1.55rem 0;
+  margin: 1.5rem 0;
 }
 
 .directory table,
@@ -493,11 +493,6 @@ ol.category-breadcrumb {
   right:  $topic-body-width-padding;
 }
 
-.topic-map {
-  margin: 0;
-  border: 0;
-}
-
 .small-action {
   border-top: 1px solid $color-melon-dark;
 
@@ -531,6 +526,48 @@ aside.quote .title {
   background-color: darken($color-gray-lighter, 3%);
   padding: 12px;
 }
+
+//
+// Topic Map
+// --------------------------------------------------
+.topic-map {
+  margin: 0;
+  border: 0;
+  background-color: $color-gray-lighter;
+  border-bottom: 1px solid $color-gray-light;
+
+  .map li {
+    padding: 1rem;
+
+    h4 {
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  .map li:nth-child(3),
+  .map li.secondary {
+    h4 {
+      margin-top: 0.75rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .map .number {
+    font-weight: 700;
+    color: $primary-medium;
+  }
+
+  .widget-button.btn {
+    background-color: $color-gray-lighter;
+    border-radius: 0;
+  }
+
+  .topic-map-extended {
+    border: 0;
+  }
+}
+
 
 //
 // MODALS
