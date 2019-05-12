@@ -59,6 +59,20 @@ $font-sans-serif: $font-archivo;
 
 $base-font-family: $font-sans-serif;
 
+
+//
+// ANIMATIONS
+// --------------------------------------------------
+@keyframes background-fade-highlight {
+  0% {
+    background-color: $tertiary-low;
+  }
+  100% {
+    background-color: $color-white;
+  }
+}
+
+
 //
 // GLOBAL
 // --------------------------------------------------
@@ -130,7 +144,8 @@ input[type="search"],
 input[type="tel"],
 input[type="color"],
 .select-kit.combo-box .select-kit-header,
-.select-kit.combo-box .combo-box-header  {
+.select-kit.combo-box .combo-box-header,
+.nav-pills > li > a.toggle-link  {
   background-color: $color-white;
   border: 1px solid $color-gray-light;
   border-radius: $layout-border-radius;
@@ -178,7 +193,7 @@ div.ac-wrap,
   background-color: $color-gray-light;
 
   .fa {
-    color: $color-gray;
+    color: $secondary-low;
   }
 }
 
@@ -298,7 +313,7 @@ div.ac-wrap,
 // --------------------------------------------------
 .extra-info-wrapper {
   .topic-link {
-    color: $color-melon-dark;
+    color: $tertiary-medium;
     font-family: $font-serif;
     font-size: $base-font-size;
     margin: 4px 0;
@@ -333,10 +348,6 @@ div.ac-wrap,
 // --------------------------------------------------
 ol.category-breadcrumb {
   margin-right: 1.5rem;
-}
-
-.list-controls {
-  margin: 1.5rem 0;
 }
 
 .directory table,
@@ -399,12 +410,16 @@ ol.category-breadcrumb {
 .latest-topic-list-item.visited,
 .category-topic-link.visited {
   a.title:not(.badge-notification) {
-    color: $color-gray;
+    color: $secondary-low;
 
     &:hover {
       color: black;
     }
   }
+}
+
+.topic-statuses {
+  margin-right: 0.5rem;
 }
 
 .badge-category-bg {
@@ -454,51 +469,22 @@ ol.category-breadcrumb {
   font-size: $base-font-size-larger;
 }
 
-.topic-post {
-  .row {
-    width: $topic-body-width + ($topic-body-width-padding * 2);
-    box-shadow: $topic-box-shadow;
-    margin-bottom: 2rem;
-  }
+.topic-post .row {
+  box-shadow: $topic-box-shadow;
+  margin-bottom: 2rem;
 }
 
 .topic-body {
   background-color: $color-white;
-  float: none;
 
-  .regular {
-    margin-top: 0;
-  }
 }
 
 .topic-avatar {
-  background-color: $color-white;
-  float: none;
-  border-top: 3px solid $color-melon-dark;
-  width: $topic-body-width;
   padding: $topic-body-width-padding;
 
   .avatar {
     height: $topic-avatar-width;
     width: $topic-avatar-width;
-  }
-}
-
-.topic-meta-data {
-  position: absolute;
-  top: -37px;
-  width: calc(#{$topic-body-width} - (#{$topic-avatar-width} + #{$topic-body-width-padding}));
-  z-index: 11;
-  padding: 0 !important;
-  right:  $topic-body-width-padding;
-}
-
-.small-action {
-  border-top: 1px solid $color-melon-dark;
-
-  .topic-avatar {
-    background-color: none;
-    padding: 0;
   }
 }
 
@@ -512,20 +498,33 @@ ol.category-breadcrumb {
   color: $color-eggplant;
 }
 
-.topic-meta-data .post-infos {
-  flex-direction: row-reverse;
-}
-
-.read-state {
-  position: relative;
-  padding-right: 10px;
-}
-
 aside.quote .title {
   border-left: 5px solid darken($color-melon-dark, 5%);
   background-color: darken($color-gray-lighter, 3%);
   padding: 12px;
 }
+
+.small-action {
+  border-top: 1px solid $color-melon-dark;
+  margin-bottom: 1rem;
+
+  .topic-avatar {
+    background-color: none;
+    padding: 0;
+    width: auto;
+  }
+
+  .onscreen-post {
+    background: transparent;
+    font-family: $font-sans-serif;
+
+    .topic-avatar {
+      padding: 1rem 0;
+      background: transparent;
+    }
+  }
+}
+
 
 //
 // Topic Map
@@ -537,10 +536,11 @@ aside.quote .title {
   border-bottom: 1px solid $color-gray-light;
 
   .map li {
-    padding: 1rem;
+    text-align: center;
 
     h4 {
       text-align: center;
+      margin-top: 0;
       margin-bottom: 0.75rem;
     }
   }
@@ -567,7 +567,6 @@ aside.quote .title {
     border: 0;
   }
 }
-
 
 //
 // MODALS
@@ -688,10 +687,6 @@ aside.quote .title {
   }
 }
 
-.user-stream {
-  border: 2px solid $color-melon;
-}
-
 .user-stream .item,
 .user-stream .user-stream-item {
   background-color: $color-white;
@@ -711,13 +706,17 @@ aside.quote .title {
   margin-right: 1rem;
 }
 
+.user-secondary-navigation .nav-stacked,
+.nav-stacked {
+  background-color: transparent;
+}
 
 //
 // Navigation
 // --------------------------------------------------
 .nav-pills > li {
   & > a {
-    color: $color-gray;
+    color: $secondary-low;
     padding-left: 0;
     padding-right: 0;
     margin-right: 1rem;
@@ -743,9 +742,56 @@ aside.quote .title {
   }
 }
 
-.user-secondary-navigation .nav-stacked,
-.nav-stacked {
+.select-kit.multi-select .select-kit-header,
+.select-kit.combo-box .select-kit-header,
+.select-kit.combo-box .combo-box-header {
+  .badge-wrapper.bullet span.badge-category {
+    color: #333;
+  }
+}
+
+//
+// List controls
+// --------------------------------------------------
+.list-controls {
+  margin: 1.5rem 0;
+}
+
+.list-controls .nav-pills .drop {
   background-color: $color-white;
+  border: 1px solid $color-gray-light;
+  border-radius: $layout-border-radius;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    padding: 0.5rem;
+    box-sizing: border-box;
+
+    &:hover,
+    &:focus {
+      background-color: $color-melon;
+    }
+  }
+}
+
+.list-controls .nav-pills .navigation-toggle {
+  border: 0;
+
+  .toggle-link {
+    padding: 0 5px 0 10px;
+
+    &:hover {
+      box-shadow: 0 0 8px 0 $color-gray-light;
+      border: 1px solid lighten($color-gray, 20%);
+      background-color: $color-white;
+    }
+  }
 }
 
 //
@@ -782,11 +828,22 @@ table.group-members tr td {
   border-radius: $layout-border-radius;
 }
 
+.user-content-wrapper,
+.group-details-container {
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.group-details-button {
+  right: 0;
+}
+
 //
 // Badges
 // --------------------------------------------------
 .badge-groups {
-  color: $color-gray;
+  color: $secondary-low;
 }
 
 .badge-card .badge-contents {
@@ -868,7 +925,7 @@ table.group-members tr td {
   }
 
   p {
-    color: $color-gray;
+    color: $secondary-low;
   }
 
   ul li {
@@ -908,6 +965,14 @@ table.group-members tr td {
 }
 
 //
+// Other
+// --------------------------------------------------
+.body-page {
+  padding-top: 1rem;
+}
+
+
+//
 // 404
 // --------------------------------------------------
 .page-not-found-topics {
@@ -922,4 +987,8 @@ table.group-members tr td {
 .styleguide-contents {
   background: $color-white;
   padding: 1rem;
+}
+
+.styleguide-menu ul {
+  margin-left: 0;
 }
