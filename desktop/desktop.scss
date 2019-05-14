@@ -54,6 +54,65 @@
 }
 
 //
+// Embedded posts
+// --------------------------------------------------
+.embedded-posts {
+
+  .row {
+    width: auto;
+    box-shadow: none;
+    margin-bottom: 0;
+  }
+
+  .topic-avatar {
+    float: left;
+    width: auto;
+    border: 0;
+    padding: 1rem 0.5rem 1rem 1rem;
+  }
+
+  .topic-body {
+    float: auto;
+    width: auto;
+    border-top: 0;
+  }
+
+  .topic-meta-data {
+    position: relative;
+    width: auto;
+    right: auto;
+    top: auto;
+
+    .names {
+      padding-left: $topic-body-width-padding;
+    }
+  }
+
+  &.top {
+    margin-left: 0;
+    width: auto;
+
+    .row {
+      margin-bottom: -2rem;
+    }
+
+    .collapse-down {
+      transform: translate(-50%, 200%);
+    }
+  }
+
+  &.bottom {
+    margin: 1rem;
+
+    .collapse-up {
+      background-color: #fff;
+      transform: translate(-70%, -164%);
+    }
+  }
+}
+
+
+//
 // List controls
 // --------------------------------------------------
 .list-controls .navigation-container {

@@ -476,7 +476,6 @@ ol.category-breadcrumb {
 
 .topic-body {
   background-color: $color-white;
-
 }
 
 .topic-avatar {
@@ -498,12 +497,29 @@ ol.category-breadcrumb {
   color: $color-eggplant;
 }
 
+// Blockquotes
 aside.quote .title {
   border-left: 5px solid darken($color-melon-dark, 5%);
   background-color: darken($color-gray-lighter, 3%);
   padding: 12px;
 }
 
+// Moderator post
+.moderator .topic-body {
+  background-color: $tertiary-low;
+
+  .cooked {
+    background-color: $tertiary-low;
+  }
+}
+
+// Post Cpntrols
+.post-menu-area {
+  margin-bottom: 0;
+}
+
+
+// Lines in between posts
 .small-action {
   border-top: 1px solid $color-melon-dark;
   margin-bottom: 1rem;
@@ -565,6 +581,18 @@ aside.quote .title {
 
   .topic-map-extended {
     border: 0;
+  }
+}
+
+.who-liked {
+  padding-right: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  a {
+    margin: 0.35rem;
   }
 }
 
