@@ -245,25 +245,19 @@ div.ac-wrap,
   box-shadow: none;
   height: 5em;
   border-bottom: 3px solid $color-yellow;
+}
 
-  #site-logo {
-    display: none;
-  }
+#site-text-logo {
+  font-family: $font-archivo;
+  padding-right: 1rem;
+  font-size: 18px;
+  color: $color-coral;
+  font-weight: 700;
+  text-shadow: 2px 2px 0 black;
+  transition: 0.15s ease-out all;
+  text-transform: uppercase;
 
-  .title > a:after {
-    content: "Discourse";
-    display: block;
-    font-family: $font-archivo;
-    padding-right: 1rem;
-    font-size: 18px;
-    color: $color-coral;
-    font-weight: 700;
-    text-shadow: 2px 2px 0 black;
-    transition: 0.15s ease-out all;
-    text-transform: uppercase;
-  }
-
-  .title > a:hover:after {
+  &:hover {
     color: $color-yellow;
     text-shadow: 2px 2px 0 $color-black;
   }
