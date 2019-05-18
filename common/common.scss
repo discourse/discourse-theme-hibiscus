@@ -65,7 +65,7 @@ $base-font-family: $font-sans-serif;
 // --------------------------------------------------
 @keyframes background-fade-highlight {
   0% {
-    background-color: $tertiary-low;
+    background-color: $highlight;
   }
   100% {
     background-color: $color-white;
@@ -81,7 +81,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: $base-font-size-smaller;
-  background-color: #FCF9F2;
+  background-color: $secondary;
 }
 
 blockquote {
@@ -105,7 +105,7 @@ a {
 .contents {
   h2,
   h3 {
-    color: $color-eggplant;
+    color: $quaternary;
 
     .d-icon {
       opacity: 0.75;
@@ -160,8 +160,9 @@ input[type="color"],
 
 .select-kit.multi-select.is-expanded .select-kit-wrapper,
 .select-kit.combo-box .select-kit-header.is-focused {
-  box-shadow: 0 0 8px 0 $primary-high;
+  box-shadow: 0 0 8px 0 $color-gray-light;
   border-radius: $layout-border-radius;
+  border: 1px solid lighten($color-gray, 20%);
 }
 
 .select-kit.multi-select .select-kit-header,
@@ -193,7 +194,7 @@ div.ac-wrap,
   background-color: $color-gray-light;
 
   .fa {
-    color: $secondary-low;
+    color: $primary;
   }
 }
 
@@ -210,12 +211,12 @@ div.ac-wrap,
   .discourse-no-touch & {
     &:hover,
     &.btn-hover {
-      color: $color-black;
+      color: $primary;
       background-color: $primary-low-mid;
       box-shadow: $topic-box-shadow;
 
       .d-icon {
-        color: $color-black;
+        color: $primary;
       }
     }
   }
@@ -244,22 +245,22 @@ div.ac-wrap,
 .d-header {
   box-shadow: none;
   height: 5em;
-  border-bottom: 3px solid $color-yellow;
+  border-bottom: 3px solid $header_primary;
 }
 
 #site-text-logo {
   font-family: $font-archivo;
   padding-right: 1rem;
   font-size: 18px;
-  color: $color-coral;
+  color: $tertiary;
   font-weight: 700;
   text-shadow: 2px 2px 0 black;
   transition: 0.15s ease-out all;
   text-transform: uppercase;
 
   &:hover {
-    color: $color-yellow;
-    text-shadow: 2px 2px 0 $color-black;
+    color: $header_primary;
+    text-shadow: 2px 2px 0 $primary;
   }
 }
 
@@ -286,8 +287,8 @@ div.ac-wrap,
   .drop-down-mode & {
     .active .icon {
       position: relative;
-      border-color: $color-yellow;
-      background-color: $color-yellow;
+      border-color: $header_primary;
+      background-color: $header_primary;
       cursor: default;
       border: none;
 
@@ -352,7 +353,7 @@ ol.category-breadcrumb {
   th {
     text-transform: uppercase;
     font-size: 12px;
-    color: $color-eggplant;
+    color: $quaternary;
     font-weight: bold;
   }
 
@@ -385,7 +386,7 @@ ol.category-breadcrumb {
 
   &:hover {
     td {
-      background-color: $color-gray-lighter;
+      background-color: $primary-very-low;
       color: $primary-high;
     }
   }
@@ -404,10 +405,10 @@ ol.category-breadcrumb {
 .latest-topic-list-item.visited,
 .category-topic-link.visited {
   a.title:not(.badge-notification) {
-    color: $secondary-low;
+    color: $primary-high;
 
     &:hover {
-      color: black;
+      color: $primary;
     }
   }
 }
@@ -424,20 +425,20 @@ ol.category-breadcrumb {
   font-family: $font-sans-serif;
 
   &:hover {
-    color: black;
+    color: $primary;
   }
 
   .extra-info-wrapper & {
     color: white;
 
     &:hover {
-      color: $color-coral;
+      color: $tertiary;
     }
   }
 }
 
 #create-topic {
-  background-color: $color-coral;
+  background-color: $tertiary;
   color: $color-white;
 
   .fa {
@@ -445,7 +446,7 @@ ol.category-breadcrumb {
   }
 
   &:hover {
-    background-color: $color-purple;
+    background-color: $header_background;
     color: $color-white;
 
     .fa {
@@ -488,7 +489,7 @@ ol.category-breadcrumb {
 
 .badge-notification.new-posts,
 .badge-notification.unread-posts {
-  color: $color-eggplant;
+  color: $quaternary;
 }
 
 // Blockquotes
@@ -597,6 +598,10 @@ aside.quote .title {
   background-color: $color-white;
 }
 
+.inline-modal .modal-inner-container {
+  border: 1px solid $primary-medium;
+}
+
 //
 // DROPDOWNS & POPUPS
 // --------------------------------------------------
@@ -646,16 +651,16 @@ aside.quote .title {
   .select-kit-row.is-selected.is-highlighted:hover,
   .select-kit-row.is-highlighted,
   .select-kit-row.is-highlighted:hover {
-    background-color: $color-melon;
+    background-color: $highlight;
   }
 
   &.dropdown-select-box.period-chooser .period-chooser-header {
     h2.selected-name {
       &:hover {
-        color: $color-purple;
+        color: $header_background;
 
         .date-section {
-          color: $color-purple;
+          color: $header_background;
         }
 
         .top-date-string {
@@ -691,19 +696,19 @@ aside.quote .title {
   li.heading a {
     padding: 0.5rem;
     font-family: $font-sans-serif;
-    color: $color-eggplant;
+    color: $quaternary;
 
     &:hover,
     &:focus {
       background-color: $tertiary-low;
-      color: $color-eggplant;
+      color: $quaternary;
 
       .fa {
-        color: $color-eggplant;
+        color: $quaternary;
       }
 
       .blurb {
-        color: black;
+        color: $primary;
       }
     }
   }
@@ -713,7 +718,7 @@ aside.quote .title {
 .user-stream .user-stream-item {
   background-color: $color-white;
   padding: 1rem;
-  border-bottom: 1px solid $color-melon;
+  border-bottom: 1px solid $highlight;
 
   &:last-child {
     border-bottom: none;
@@ -738,7 +743,7 @@ aside.quote .title {
 // --------------------------------------------------
 .nav-pills > li {
   & > a {
-    color: $secondary-low;
+    color: mix($primary-high, $primary);
     padding-left: 0;
     padding-right: 0;
     margin-right: 1rem;
@@ -746,20 +751,20 @@ aside.quote .title {
 
     &:hover {
       color: black;
-      border-bottom: 2px solid $color-yellow;
+      border-bottom: 2px solid $header_primary;
       background-color: transparent;
     }
   }
 
   a.active {
     background-color: transparent;
-    color: $color-eggplant;
+    color: $quaternary;
     font-weight: 700;
-    border-bottom: 2px solid $color-coral;
+    border-bottom: 2px solid $tertiary;
 
     &:hover {
-      border-bottom: 2px solid $color-yellow;
-      color: black;
+      border-bottom: 2px solid $header_primary;
+      color: $primary;
     }
   }
 }
@@ -768,7 +773,7 @@ aside.quote .title {
 .select-kit.combo-box .select-kit-header,
 .select-kit.combo-box .combo-box-header {
   .badge-wrapper.bullet span.badge-category {
-    color: #333;
+    color: $primary;
   }
 }
 
@@ -797,7 +802,7 @@ aside.quote .title {
 
     &:hover,
     &:focus {
-      background-color: $color-melon;
+      background-color: $highlight;
     }
   }
 }
@@ -841,7 +846,13 @@ table.group-members tr td {
       box-sizing: border-box;
     }
   }
+
+  .secondary dt {
+    color: $primary-medium;
+  }
 }
+
+
 
 .user-content-wrapper {
   background-color: $color-white;
@@ -865,7 +876,7 @@ table.group-members tr td {
 // Badges
 // --------------------------------------------------
 .badge-groups {
-  color: $secondary-low;
+  color: $primary-medium;
 }
 
 .badge-card .badge-contents {
@@ -898,7 +909,7 @@ table.group-members tr td {
 }
 
 .open .grippie {
-  background-color: $color-yellow;
+  background-color: $header_primary;
 }
 
 .composer-popup {
@@ -915,7 +926,7 @@ table.group-members tr td {
 // --------------------------------------------------
 .alert.alert-info {
   background-color: $color-yellow-light;
-  box-shadow: 3px 3px 0 $color-gray-light;
+  box-shadow: 3px 3px 0 $primary-very-low;
 
   .buttons a {
     margin-top: 0.5rem;
@@ -930,8 +941,8 @@ table.group-members tr td {
 // Signup CTA
 // --------------------------------------------------
 .alert.signup-cta {
-  background-color: $color-melon;
-  box-shadow: 3px 3px 0 $color-coral;
+  background-color: $highlight;
+  box-shadow: 3px 3px 0 $tertiary;
 }
 
 //
@@ -939,15 +950,15 @@ table.group-members tr td {
 // --------------------------------------------------
 .footer-message  {
   a {
-    color: $color-coral;
+    color: $tertiary;
 
     &:hover {
-      color: $color-eggplant;
+      color: $quaternary;
     }
   }
 
   p {
-    color: $secondary-low;
+    color: $primary-high;
   }
 
   ul li {

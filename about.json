@@ -7,12 +7,12 @@
   "color_schemes": {
     "Default": {
       "primary": "333333",
-      "secondary": "f6f6f6",
+      "secondary": "FCF9F2",
       "tertiary": "F4675E",
       "quaternary": "51224A",
       "header_background": "2F1A80",
-      "header_primary": "F4675E",
-      "highlight": "5F5F5F",
+      "header_primary": "FFCF27",
+      "highlight": "FBE6E4",
       "danger": "96000e",
       "success": "1ca551",
       "love": "F4675E"
