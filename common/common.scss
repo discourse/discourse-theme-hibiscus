@@ -16,28 +16,27 @@
 // --------------------------------------------------
 //
 
-
 //
 // VARIABLES – COLORS
 // --------------------------------------------------
-$color-purple: #2F1A80;
-$color-eggplant: #51224A;
-$color-coral: #F4675E;
+$color-purple: #2f1a80;
+$color-eggplant: #51224a;
+$color-coral: #f4675e;
 
-$color-yellow: #FFCF27;
+$color-yellow: #ffcf27;
 $color-yellow-light: lighten($color-yellow, 35%);
 
-$color-melon-dark: #F8D4CF;
-$color-melon: #FBE6E4;
-$color-melon-light: #F8F3F1;
+$color-melon-dark: #f8d4cf;
+$color-melon: #fbe6e4;
+$color-melon-light: #f8f3f1;
 
-$color-beige: #FCF9F2;
+$color-beige: #fcf9f2;
 
 $color-black: #000000;
-$color-gray: #5F5F5F;
+$color-gray: #5f5f5f;
 $color-gray-light: #e4e4e4;
 $color-gray-lighter: #f6f6f6;
-$color-white: #FFFFFF;
+$color-white: #ffffff;
 
 //
 // VARIABLES - LAYOUT
@@ -46,19 +45,18 @@ $layout-gutter: 1rem;
 $layout-border-radius: 3px;
 
 $topic-avatar-width: 30px;
-$topic-box-shadow: 0px 1px 6px rgba(0,0,0,0.1);
+$topic-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
 
 //
 // VARIABLES – TYPOGRAPHY
 // --------------------------------------------------
-$font-merriweather: 'Merriweather', Georgia, serif;
-$font-archivo: 'Archivo', sans-serif;
+$font-merriweather: "Merriweather", Georgia, serif;
+$font-archivo: "Archivo", sans-serif;
 
 $font-serif: $font-merriweather;
 $font-sans-serif: $font-archivo;
 
 $base-font-family: $font-sans-serif;
-
 
 //
 // ANIMATIONS
@@ -71,7 +69,6 @@ $base-font-family: $font-sans-serif;
     background-color: $color-white;
   }
 }
-
 
 //
 // GLOBAL
@@ -145,7 +142,7 @@ input[type="tel"],
 input[type="color"],
 .select-kit.combo-box .select-kit-header,
 .select-kit.combo-box .combo-box-header,
-.nav-pills > li > a.toggle-link  {
+.nav-pills > li > a.toggle-link {
   background-color: $color-white;
   border: 1px solid $color-gray-light;
   border-radius: $layout-border-radius;
@@ -205,7 +202,7 @@ div.ac-wrap,
   border-radius: $layout-border-radius;
 
   .d-icon {
-    opacity: 0.80;
+    opacity: 0.8;
   }
 
   .discourse-no-touch & {
@@ -513,7 +510,6 @@ aside.quote .title {
   margin-bottom: 0;
 }
 
-
 // Lines in between posts
 .small-action {
   border-top: 1px solid $color-melon-dark;
@@ -535,7 +531,6 @@ aside.quote .title {
     }
   }
 }
-
 
 //
 // Topic Map
@@ -852,8 +847,6 @@ table.group-members tr td {
   }
 }
 
-
-
 .user-content-wrapper {
   background-color: $color-white;
   padding: 1rem;
@@ -948,7 +941,7 @@ table.group-members tr td {
 //
 // Footer
 // --------------------------------------------------
-.footer-message  {
+.footer-message {
   a {
     color: $tertiary;
 
@@ -1004,7 +997,6 @@ table.group-members tr td {
   padding-top: 1rem;
 }
 
-
 //
 // 404
 // --------------------------------------------------
@@ -1024,4 +1016,11 @@ table.group-members tr td {
 
 .styleguide-menu ul {
   margin-left: 0;
+}
+
+// Avatar flair fix
+
+.topic-avatar .avatar-flair.rounded {
+  left: 29px;
+  transform: scale(75%);
 }
