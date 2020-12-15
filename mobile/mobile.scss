@@ -4,7 +4,7 @@
 // Layout
 // --------------------------------------------------
 #main-outlet {
-  padding-top: 4.75rem;
+  padding-top: 0.5rem;
 }
 
 //
@@ -156,4 +156,10 @@ div.education {
 
 .modal-inner-container {
   min-width: 300px;
+}
+
+// Categories
+
+.category-list-item.category {
+  background: white;
 }

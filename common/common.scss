@@ -232,10 +232,6 @@ div.ac-wrap,
   }
 }
 
-.btn-text {
-  background-color: $color-white;
-}
-
 //
 // HEADER
 // --------------------------------------------------
@@ -297,6 +293,27 @@ div.ac-wrap,
         border: none;
       }
     }
+  }
+}
+
+.menu-links-header {
+  ol li,
+  ul li {
+    margin-bottom: 0;
+  }
+}
+
+div.menu-links-header .menu-links-row li a {
+  border-bottom: 1px solid white;
+
+  &.active {
+    border-bottom: 1px solid white;
+    &:hover {
+      border-bottom: 1px solid white !important;
+    }
+  }
+  &:hover {
+    border-bottom: 1px solid $color-melon-light !important;
   }
 }
 
@@ -414,8 +431,21 @@ ol.category-breadcrumb {
   margin-right: 0.5rem;
 }
 
-.badge-category-bg {
-  border-radius: 9px;
+.badge-wrapper.bullet {
+  .badge-category-bg {
+    border-radius: 10px;
+  }
+
+  .badge-category-parent-bg {
+    border-radius: 10px;
+    width: 9px;
+    + .badge-category-bg {
+      width: 9px;
+      margin-left: -3px;
+      top: 1px;
+      border-left: 1px solid $secondary;
+    }
+  }
 }
 
 .badge-wrapper span.badge-category {
@@ -462,17 +492,21 @@ ol.category-breadcrumb {
 }
 
 .topic-post .row {
-  box-shadow: $topic-box-shadow;
   margin-bottom: 2rem;
+  box-sizing: border-box;
+  background: $color-white;
+  border-top: 3px solid $tertiary-medium;
 }
 
 .topic-body {
   background-color: $color-white;
+  @media screen and (max-width: 790px) {
+    width: 100%;
+  }
 }
 
 .topic-avatar {
   padding: $topic-body-width-padding;
-
   .avatar {
     height: $topic-avatar-width;
     width: $topic-avatar-width;
@@ -491,9 +525,23 @@ ol.category-breadcrumb {
 
 // Blockquotes
 aside.quote .title {
-  border-left: 5px solid darken($color-melon-dark, 5%);
-  background-color: darken($color-gray-lighter, 3%);
+  border-left: 5px solid $color-melon-dark;
+  background-color: $color-gray-lighter;
   padding: 12px;
+}
+
+aside.onebox {
+  background: transparent;
+}
+
+// Post notice
+
+.post-notice {
+  background: $color-white;
+
+  &.old {
+    background: $color-gray-lighter;
+  }
 }
 
 // Moderator post
@@ -505,7 +553,7 @@ aside.quote .title {
   }
 }
 
-// Post Cpntrols
+// Post Controls
 .post-menu-area {
   margin-bottom: 0;
 }
@@ -516,9 +564,8 @@ aside.quote .title {
   margin-bottom: 1rem;
 
   .topic-avatar {
-    background-color: none;
-    padding: 0;
-    width: auto;
+    background-color: transparent;
+    padding: 0.7rem 0 0 0;
   }
 
   .onscreen-post {
@@ -530,6 +577,10 @@ aside.quote .title {
       background: transparent;
     }
   }
+}
+
+.topic-area > .loading-container {
+  max-width: 47.46rem;
 }
 
 //
@@ -609,8 +660,17 @@ aside.quote .title {
   }
 }
 
+.groups-boxes .group-box .group-box-inner {
+  background: $color-white;
+  box-shadow: $topic-box-shadow;
+}
+
 #share-link {
   background-color: $color-white;
+}
+
+.popup-menu {
+  background: $color-white;
 }
 
 .user-menu .notifications {
@@ -754,7 +814,6 @@ aside.quote .title {
   a.active {
     background-color: transparent;
     color: $quaternary;
-    font-weight: 700;
     border-bottom: 2px solid $tertiary;
 
     &:hover {
@@ -770,6 +829,11 @@ aside.quote .title {
   .badge-wrapper.bullet span.badge-category {
     color: $primary;
   }
+}
+
+.admin-controls .nav-pills > li a.active {
+  background: transparent;
+  font-weight: normal;
 }
 
 //
@@ -972,7 +1036,6 @@ table.group-members tr td {
 #topic-footer-buttons .topic-notifications-button {
   .reason {
     display: inline-block;
-    margin-left: 10px;
   }
 }
 
@@ -983,7 +1046,7 @@ table.group-members tr td {
   background-color: $color-white;
   padding: 1rem;
   margin: 1rem 0;
-  box-shadow: 3px 3px 0 $color-melon-dark;
+  box-shadow: $topic-box-shadow;
 }
 
 .search-result-topic .topic {
@@ -1023,4 +1086,21 @@ table.group-members tr td {
 .topic-avatar .avatar-flair.rounded {
   left: 29px;
   transform: scale(75%);
+}
+
+// Categories
+
+.category-boxes .category-box .category-box-inner {
+  background: $color-white;
+  box-shadow: $topic-box-shadow;
+}
+
+// Advanced search
+
+.search-container .search-advanced-sidebar .search-advanced-filters {
+  background: $color-melon-light;
+}
+
+.search-container .search-advanced-sidebar .search-advanced-title {
+  background: $color-melon-dark;
 }

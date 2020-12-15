@@ -1,19 +1,33 @@
 //
 // Topics
 // --------------------------------------------------
+@media screen and (max-width: 735px) {
+  #main-outlet {
+    overflow: hidden;
+    padding-left: 3px;
+  }
+}
+.post-stream {
+  overflow: hidden;
+}
+
 .topic-meta-data {
   position: absolute;
   top: -37px;
-  width: calc(#{$topic-body-width} - (#{$topic-avatar-width} + #{$topic-body-width-padding}));
+  width: calc(
+    #{$topic-body-width} - (#{$topic-avatar-width} + #{$topic-body-width-padding})
+  );
+
+  @media screen and (max-width: 735px) {
+    width: calc(100vw - 90px);
+  }
   z-index: 11;
   padding: 0 !important;
-  right:  $topic-body-width-padding;
+  right: $topic-body-width-padding;
 }
 
 .topic-avatar {
   float: none;
-  border-top: 3px solid $tertiary-medium;
-  width: $topic-body-width;
   background-color: #fff;
 }
 
@@ -23,11 +37,14 @@
 
 .topic-post .row {
   width: $topic-body-width + ($topic-body-width-padding * 2);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  @media screen and (max-width: 735px) {
+    width: calc(100vw - 24px);
+  }
 }
 
 .topic-body {
   float: none;
-
   .reply-to-tab {
     margin-top: -3px;
   }
@@ -49,15 +66,10 @@
   border-top: 1px solid #ebebeb;
 }
 
-.time-gap + .topic-post .topic-avatar {
-  border-top: 3px solid $tertiary-medium;
-}
-
 //
 // Embedded posts
 // --------------------------------------------------
 .embedded-posts {
-
   .row {
     width: auto;
     box-shadow: none;
@@ -110,7 +122,6 @@
     }
   }
 }
-
 
 //
 // List controls
