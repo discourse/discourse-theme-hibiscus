@@ -1,0 +1,72 @@
+// Sidebar toggle styling
+.header-sidebar-toggle {
+  button {
+    border-radius: 50%;
+    .d-icon {
+      font-size: var(--base-font-size);
+      color: var(--tertiary);
+    }
+
+    &:hover {
+      .d-icon {
+        color: var(--primary-medium);
+      }
+    }
+  }
+}
+// Sidebar Style Overrides
+.sidebar-wrapper {
+  background: none;
+}
+
+.sidebar-section-header.btn {
+  border: none;
+}
+
+.sidebar-footer-wrapper {
+  background: none;
+  .desktop-view & {
+    .sidebar-footer-container {
+      background: none;
+      border-top-color: var(--tertiary-medium);
+      &:before {
+        background: none;
+      }
+    }
+  }
+}
+
+.sidebar-section-link-wrapper .sidebar-section-link {
+  border-left: 2px solid transparent;
+
+  &.active {
+    background: none;
+    border-color: var(--tertiary);
+  }
+
+  &:hover,
+  &:focus {
+    background: none;
+    border-color: var(--header_primary);
+  }
+}
+
+.sidebar-wrapper {
+  .sidebar-section-wrapper {
+    .sidebar-section-header-wrapper {
+      border-left: 2px solid transparent;
+
+      &:hover {
+        background: none;
+        border-left: 2px solid var(--header_primary);
+      }
+      .sidebar-section-header {
+        &:hover,
+        .btn-hover {
+          background: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
