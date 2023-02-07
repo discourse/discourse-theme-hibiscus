@@ -413,7 +413,7 @@ ol.category-breadcrumb {
 .latest-topic-list-item .main-link a.title {
   font-size: 15px;
   padding: 0;
-  margin-bottom: $layout-gutter / 2;
+  margin-bottom: $layout-gutter * 0.5;
   display: inline-block;
 }
 
