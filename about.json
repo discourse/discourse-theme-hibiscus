@@ -3,6 +3,10 @@
   "about_url": null,
   "license_url": null,
   "assets": {
+    "archivo": "assets/Archivo-Regular.ttf",
+    "archivo-bold": "assets/Archivo-Bold.ttf",
+    "merriweather": "assets/Merriweather-Regular.ttf",
+    "merriweather-bold": "assets/Merriweather-Bold.ttf"
   },
   "color_schemes": {
     "Default": {
