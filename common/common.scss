@@ -50,6 +50,29 @@ $topic-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
 //
 // VARIABLES – TYPOGRAPHY
 // --------------------------------------------------
+
+@font-face {
+  font-family: "Archivo";
+  src: url($archivo-regular);
+}
+
+@font-face {
+  font-family: "Archivo";
+  src: url($archivo-bold);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url($merriweather-regular);
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url($merriweather-bold);
+  font-weight: bold;
+}
+
 $font-merriweather: "Merriweather", Georgia, serif;
 $font-archivo: "Archivo", sans-serif;
 
