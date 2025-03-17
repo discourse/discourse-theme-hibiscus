@@ -2,6 +2,7 @@
 .header-sidebar-toggle {
   button {
     border-radius: 50%;
+
     .d-icon {
       font-size: var(--base-font-size);
       color: var(--tertiary);
@@ -14,22 +15,21 @@
     }
   }
 }
-// Sidebar Style Overrides
-.sidebar-wrapper {
-  background: none;
-}
 
+// Sidebar Style Overrides
 .sidebar-section-header.btn {
   border: none;
 }
 
 .sidebar-footer-wrapper {
   background: none;
+
   .desktop-view & {
     .sidebar-footer-container {
       background: none;
       border-top-color: var(--tertiary-medium);
-      &:before {
+
+      &::before {
         background: none;
       }
     }
@@ -52,6 +52,8 @@
 }
 
 .sidebar-wrapper {
+  background: none;
+
   .sidebar-section-wrapper {
     .sidebar-section-header-wrapper {
       border-left: 2px solid transparent;
@@ -60,6 +62,7 @@
         background: none;
         border-left: 2px solid var(--header_primary);
       }
+
       .sidebar-section-header {
         &:hover,
         .btn-hover {
