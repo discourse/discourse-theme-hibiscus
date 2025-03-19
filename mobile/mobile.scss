@@ -13,7 +13,7 @@
 .d-header {
   height: 4.5em;
 
-  .title > a:after {
+  .title > a::after {
     padding-right: 0.75rem;
     font-size: 16px;
   }
@@ -159,7 +159,6 @@ div.education {
 }
 
 // Categories
-
 .category-list-item.category {
   background: white;
 }
