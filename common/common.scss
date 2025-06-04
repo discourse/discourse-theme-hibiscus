@@ -42,7 +42,7 @@ $color-white: #fff;
 $layout-gutter: 1rem;
 $layout-border-radius: 3px;
 $topic-avatar-width: 30px;
-$topic-box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+$topic-box-shadow: 0px 1px 6px rgb(0, 0, 0, 0.1);
 
 //
 // VARIABLES – TYPOGRAPHY
@@ -524,7 +524,7 @@ ol.category-breadcrumb {
 .topic-body {
   background-color: $color-white;
 
-  @media screen and (max-width: 790px) {
+  @media screen and (width <= 790px) {
     width: 100%;
   }
 }
