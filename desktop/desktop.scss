@@ -1,7 +1,7 @@
 //
 // Topics
 // --------------------------------------------------
-@media screen and (max-width: 735px) {
+@media screen and (width <= 735px) {
   #main-outlet {
     overflow: hidden;
     padding-left: 3px;
@@ -23,7 +23,7 @@
   padding: 0 !important;
   right: $topic-body-width-padding;
 
-  @media screen and (max-width: 735px) {
+  @media screen and (width <= 735px) {
     width: calc(100vw - 90px);
   }
 }
@@ -39,9 +39,9 @@
 
 .topic-post .row {
   width: $topic-body-width + ($topic-body-width-padding * 2);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 6px rgb(0, 0, 0, 0.1);
 
-  @media screen and (max-width: 735px) {
+  @media screen and (width <= 735px) {
     width: calc(100vw - 24px);
   }
 }
